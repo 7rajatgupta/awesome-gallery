@@ -1,9 +1,16 @@
 import Link from "next/link";
-
+import { fileUrls } from "~/utils/mock";
+const mockImages = fileUrls.map((url, idx) => ({ id: idx, url }));
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="text-8xl">Aloha ! </div>
+    <main>
+      <div className="flex flex-wrap gap-4">
+        {mockImages.map((image) => (
+          <div key={image.id} className="w-48">
+            <img src={image.url} alt="gallery-image" />
+          </div>
+        ))}
+      </div>
     </main>
   );
 }
