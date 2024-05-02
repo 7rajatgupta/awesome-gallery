@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-zinc-900 text-gray-50;
+}
+img {
+  @apply rounded-md transition-all hover:-translate-y-1;
+}
